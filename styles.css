@@ -1,0 +1,1329 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fuentes */
+@font-face {
+    font-family: 'Meorgine';
+    src: url(fonts/Meorgine.otf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Guffie';
+    src: url(fonts/Guffie-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boowie';
+    src: url(fonts/BOOWIE.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Creato';
+    src: url(fonts/CreatoDisplay-Regular.otf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Cuerpo de la página */
+body {
+    background: url('images/gataPrincipal.png') no-repeat center center fixed;  
+    background-size: cover;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    padding: 20px 50px;
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    font-size: 2rem; /* Usando rem para que sea responsive */
+    font-weight: bold;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+.navbar-toggler {
+    background-color: #47655e7a; /* Color del navbar toggle */
+    border: none;
+}
+
+/* Estilos para los enlaces del navbar en el estado colapsado */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.596); /* Fondo para la barra colapsada */
+    }
+
+    .navbar-nav .nav-link {
+        margin: 0.2rem 0; /* Margen entre enlaces */
+        border-radius: 5px; /* Bordes redondeados */
+    }
+
+    .navbar-nav .nav-link:hover {
+        background-color: #47655e9d; /* Fondo para los enlaces al pasar el ratón en el estado colapsado */
+    }
+}
+
+.nav-image {
+    height: 3rem; /* Usando rem para que sea responsive */
+    width: 3rem; /* Usando rem para que sea responsive */
+}
+
+/* Cambia el logo a negro en pantallas pequeñas */
+@media (max-width: 768px) {
+    .nav-image {
+        content: url('images/logo.png');
+    }
+}
+
+.nav-link {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-family: 'Boowie';
+}
+
+.nav-link:hover {
+    color: #ff4081;
+}
+
+.main-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8vh 0; /* Usando vh para que sea responsive */
+    margin-top: 10px; /* Ajusta este valor según la altura de tu nav */
+}
+
+.titulo1 {
+    font-family: 'Meorgine';
+    font-size: 8rem; /* Tamaño fijo para pantallas grandes */
+}
+
+.frase1 {
+    font-family: 'Guffie';
+    font-size: 2rem; /* Tamaño fijo para pantallas grandes */
+}
+
+.titulo2 {
+    font-family: 'Guffie';
+    font-size: 2rem; /* Tamaño fijo para pantallas grandes */
+    color: #f0f0f0;
+}
+
+.highlight {
+    color: #47655e; 
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+.explore-btn {
+    font-family: 'Boowie';
+    background-color: #f0f0f0; /* Color de fondo del botón */
+    color: #000000;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.explore-btn:hover {
+    background-color: #47655ede; /* Color de fondo del botón al pasar el ratón */
+}
+
+.text-section {
+    text-align: center;
+    margin-bottom: 5rem; /* Increased margin for more space */
+}
+
+.text-section h1 {
+    font-size: 5rem; /* Tamaño fijo para pantallas grandes */
+    font-weight: bold;
+}
+
+.text-section h2 {
+    font-size: 3rem; /* Tamaño fijo para pantallas grandes */
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.text-section h3 {
+    font-size: 2rem; /* Tamaño fijo para pantallas grandes */
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.image-section img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.facts-section-wrapper {
+    position: relative; /* Cambiado a relative para evitar superposición */
+    width: 100%;
+    padding: 2rem; /* Asegura espacio adecuado */
+    overflow-x: auto; /* Permitir desplazamiento horizontal */
+    display: flex;
+}
+
+.facts-section {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.fact {
+    background: rgba(34, 34, 34, 0.8);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-right: 1rem; /* Espacio entre recuadros */
+    flex: 0 0 auto; /* Mantiene el tamaño fijo */
+    min-width: 300px; /* Tamaño mínimo fijo para pantallas grandes */
+}
+
+.btn-secondary{
+    font-family: 'Guffie';
+    font-size: 2rem;
+    color: #f0f0f0;
+    border: none;
+    margin: 0.5rem;
+    background: transparent;
+}
+
+.fact h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #f0f0f0;
+    font-family: 'Guffie';
+}
+
+.fact p {
+    font-size: 1.2rem;
+    color: #f0f0f0;
+    font-family: 'Creato';
+}
+
+.fact-content {
+    display: flex;
+    align-items: center;
+}
+
+.fact-icon {
+    width: 180px;
+    height: 180px;
+    margin-right: 1rem;
+}
+
+
+
+/* Animation for fadeIn effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+.fade-in-image {
+    animation: fadeInImage 1s ease-out;
+}
+
+footer {
+    padding: 2rem;
+    border-top: 1px solid #333;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+
+    .main-section{
+        margin-top: 300px;
+    }
+    .titulo1 {
+        font-size: 6rem;
+    }
+
+    .frase1 {
+        font-size: 1.5rem;
+    }
+
+    .titulo2 {
+        font-size: 1.5rem;
+    }
+
+    .highlight {
+        color: #ffffff; 
+    }
+
+
+    .explore-btn {
+        font-size: 1.5rem;
+        padding: 0.8rem 1.6rem;
+    }
+
+    .image-section img {
+        max-width: 100%;
+    }
+
+    .fact {
+        min-width: 100%; /* Ancho completo en dispositivos móviles */
+        padding: 1rem;
+        margin-right: 1rem;
+    }
+
+    .fact-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+ 
+    .fact-icon {
+        width: 100px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+ 
+    .facts-section-wrapper {
+        flex-direction: column;
+    }
+    .fact-icon{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .fact h4 {
+        font-size: 1.5rem;
+    }
+
+    .fact p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-section{
+        margin-top: 30px;
+    }
+    .titulo1 {
+        font-size: 4rem;
+    }
+
+    .frase1 {
+        font-size: 1.2rem;
+    }
+
+    .titulo2 {
+        font-size: 1.2rem;
+    }
+
+    .highlight {
+        color: #47655e; 
+    }
+
+    .explore-btn {
+        font-size: 1.2rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .fact {
+        min-width: 100; /* Ancho completo en dispositivos móviles */
+        padding: 0.5rem;
+        margin-right: 0.5rem;
+    }
+    .fact-icon{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .fact h4 {
+        font-size: 1.2rem;
+    }
+
+    .fact p {
+        font-size: 1rem;
+    }
+
+}
+
+@media (min-width: 1024px) and (max-width: 1124px) {
+    .navbar {
+        background-color: rgba(0, 0, 0, 0.308); /* Fondo oscuro con opacidad */
+        padding: 0; /* Eliminado padding para ajuste completo */
+    }
+    
+    .navbar-brand {
+        padding: 0; /* Eliminado padding para ajuste completo */
+    }
+
+    .navbar-nav {
+        margin: 0; /* Eliminado margen para ajuste completo */
+    }
+
+    .navbar-nav .nav-link {
+        padding: 1rem; /* Espaciado interno para los enlaces */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                /* acerca de mi */
+
+/* General Styles */
+
+.body2 {
+    background: url('images/fondoAbtt.jpg') no-repeat center center fixed;  
+    background-size: cover;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #fff;
+    background-color: #000;
+  }
+  
+  header {
+    padding: 20px 50px;
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    font-size: 2rem; /* Usando rem para que sea responsive */
+    font-weight: bold;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+.navbar-toggler {
+    background-color: #47655e7a; /* Color del navbar toggle */
+    border: none;
+}
+
+/* Estilos para los enlaces del navbar en el estado colapsado */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.596); /* Fondo para la barra colapsada */
+    }
+
+    .navbar-nav .nav-link {
+        margin: 0.2rem 0; /* Margen entre enlaces */
+        border-radius: 5px; /* Bordes redondeados */
+    }
+
+    .navbar-nav .nav-link:hover {
+        background-color: #47655e9d; /* Fondo para los enlaces al pasar el ratón en el estado colapsado */
+    }
+}
+
+.nav-image {
+    height: 3rem; /* Usando rem para que sea responsive */
+    width: 3rem; /* Usando rem para que sea responsive */
+}
+
+@media (max-width: 768px) {
+    .nav-image {
+        content: url('images/logoBlanco.png');
+    }
+}
+
+.nav-link {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-family: 'Boowie';
+}
+
+.nav-link:hover {
+    color: #ff4081;
+}
+
+.hero-section {
+    background: url('images/fondoPrst.png') no-repeat center center;
+    background-size: cover;
+    padding: 100px 0;
+    min-height: 100vh; /* Asegura que cubra toda la altura de la ventana */
+    display: flex;
+    align-items: center;
+    color: #fff;
+  }
+
+
+  
+  .hero-section .display-4 {
+    font-size: 5rem;
+    font-family: 'Meorgine';
+  }
+
+  .lead{
+    font-size: 2rem;
+    font-family: 'Guffie';
+  }
+
+  .parrafo2{
+    font-size: 1.5rem;
+    font-family: 'Creato';
+  }
+
+  .line-div {
+    border-top: 2px solid #fff; /* Ajusta el grosor y color según tu gusto */
+    width: 100%; /* Ajusta el ancho de la línea */
+    margin: 0 auto; /* Centra la línea horizontal */
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+  
+  .venti-section {
+    padding: 50px 0;
+  }
+  
+  .venti-section h2{
+    margin-bottom: 30px;
+    font-family: 'Meorgine';
+    font-size: 3rem;
+  } 
+  
+  .venti-section p {
+    margin-bottom: 30px;
+    font-family: 'Creato';
+    font-size: 1.5rem;
+  }
+  
+.img-yo {
+    border-style: ridge;
+    border-radius: 30px;
+  }
+
+  .text-white{
+    font-family: 'Guffie';
+  }
+  .text-white2{
+    font-family: 'Creato';
+    font-size: 1.5rem;
+  }
+  
+  .venti-section .playlist {
+    margin-top: 20px;
+  }
+  
+  .venti-section .playlist h3 {
+    margin-bottom: 20px;
+  }
+  
+  .venti-section .playlist ul {
+    padding-left: 20px;
+  }
+
+  .skill {
+    margin-bottom: 10px;
+}
+
+
+.skill-name {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 5px;
+    font-family: 'Creato';
+}
+
+.skill-bar {
+    background-color: #D3D3D3; /* Color de fondo de la barra */
+    border: 2px solid #000; /* Bordes sólidos */
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 5px; /* Espaciado interno para que el relleno no toque los bordes */
+    overflow: hidden; /* Oculta cualquier parte del relleno que sobresalga */
+    position: relative; /* Posición relativa para posicionar el texto del porcentaje */
+}
+
+.skill-percentage {
+    background-color: #47655e; /* Color de fondo del relleno */
+    color: white; /* Color de texto */
+    height: 20px;  /* Aumento de altura */
+    border-radius: 15px; /* Bordes redondeados */
+    display: flex; /* Flexbox para centrar el texto */
+    align-items: center; /* Centra el texto verticalmente */
+    justify-content: center; /* Centra el texto horizontalmente */
+    width: 0; /* Inicia con ancho cero */
+    transition: width 2s ease; /* Transición suave al cambiar el ancho */
+}
+
+.skill-percentage2 {
+    background-color: #47655e; /* Color de fondo del relleno */
+    color: white; /* Color de texto */
+    height: 30px;  /* Aumento de altura */
+    border-radius: 15px; /* Bordes redondeados */
+    display: flex; /* Flexbox para centrar el texto */
+    align-items: center; /* Centra el texto verticalmente */
+    justify-content: center; /* Centra el texto horizontalmente */
+    width: 0; /* Inicia con ancho cero */
+    transition: width 2s ease; /* Transición suave al cambiar el ancho */
+}
+
+.percentage-label {
+    position: absolute; /* Posiciona absolutamente dentro de la barra */
+    width: 100%; /* Toma el ancho total de la barra */
+    text-align: center; /* Centra el texto horizontalmente */
+    z-index: 10; /* Asegura que el texto esté encima del relleno */
+}
+
+.skill-image {
+    width: 30px; /* Ajusta el tamaño de la imagen */
+    height: 30px; /* Mantiene el aspecto de la imagen */
+    margin: 0; /* Elimina margen */
+  }
+
+@media (max-width: 768px) {
+    .skill-name {
+        font-size: 0.8rem;
+    }
+}
+
+
+  
+  .additional-section {
+    background-color: #f8f9fa;
+  }
+  
+  .additional-section h2{
+    color: #000;
+    font-family: 'Meorgine';
+    font-size: 4rem;
+  }
+   
+  
+  .additional-section p {
+    color: #000;
+    font-family: 'Creato';
+    font-size: 1rem;
+  }
+
+  .track-details img {
+    border-radius: 30px;
+    width: 80%; /* Ajusta este valor según el tamaño deseado */
+    max-width: 250px; /* Establece un ancho máximo si lo deseas */
+    height: auto; /* Mantiene la relación de aspecto de la imagen */
+}
+  .tittle-favs{
+    font-family: 'Meorgine';
+    font-size: 1.5rem;
+  }
+  .track-section {
+    background-color: #f8f9fa;
+    color: #000;
+    padding: 50px 0;
+  }
+  
+  .track-details {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .footer-section {
+    height: 200px;
+    background-color: black;
+    color: #fff; /* Texto en blanco para contrastar con el fondo */
+    text-align: center; /* Centrado del texto */
+    padding: 10px 0; /* Añade algo de padding vertical */
+}
+  
+  .footer-section .social-icons i {
+    font-size: 1.5em;
+    margin: 0 10px;
+  }
+  
+  /* Responsive Styles */
+
+  @media (max-width: 768px) {
+    .hero-section .display-4 {
+      font-size: 2.5em;
+    }
+  
+    .additional-section .carousel-item img {
+      width: 100%;
+    }
+  }
+  
+  .music-carousel .carousel-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .music-carousel img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0 10px;
+  }
+  
+  .footer-section .social-icons i {
+    font-size: 1.5em;
+    margin: 0 10px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* pagina trabajos */
+
+/* styles.css */
+
+.body3 {
+    background-image: url(images/fondotrb.png);
+    background-size: cover;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #fff;
+    background-color: #000;
+    padding: 0;
+}
+header {
+    padding: 20px 50px;
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    font-size: 2rem; /* Usando rem para que sea responsive */
+    font-weight: bold;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+.navbar-toggler {
+    background-color: #47655e7a; /* Color del navbar toggle */
+    border: none;
+}
+
+/* Estilos para los enlaces del navbar en el estado colapsado */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.596); /* Fondo para la barra colapsada */
+    }
+
+    .navbar-nav .nav-link {
+        margin: 0.2rem 0; /* Margen entre enlaces */
+        border-radius: 5px; /* Bordes redondeados */
+    }
+
+    .navbar-nav .nav-link:hover {
+        background-color: #47655e9d; /* Fondo para los enlaces al pasar el ratón en el estado colapsado */
+    }
+}
+
+.nav-image {
+    height: 3rem; /* Usando rem para que sea responsive */
+    width: 3rem; /* Usando rem para que sea responsive */
+}
+
+@media (max-width: 768px) {
+    .nav-image {
+        content: url('images/logoBlanco.png');
+    }
+}
+
+.nav-link {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-family: 'Boowie';
+}
+
+.nav-link:hover {
+    color: #ff4081;
+}
+
+.hero {
+    background-image: url(images/fondoTbjs.jpeg);
+    background-size: cover;
+    padding: 100px 0;
+    min-height: 100vh; /* Asegura que cubra toda la altura de la ventana */
+    display: flex;
+    align-items: center;
+    color: #fff;
+  }
+
+
+  
+  .hero .display-4 {
+    font-size: 5rem;
+    font-family: 'Meorgine';
+  }
+
+  .parrafo2{
+    font-size: 1.5rem;
+    font-family: 'Creato';
+  }
+
+  @media (max-width: 768px) {
+    .hero .display-4 {
+        font-size: 3rem;
+        font-family: 'Meorgine';
+      }
+    
+      .parrafo2{
+        font-size: 1rem;
+        font-family: 'Creato';
+      }
+  }
+
+  .line-div {
+    border-top: 2px solid #fff; /* Ajusta el grosor y color según tu gusto */
+    width: 100%; /* Ajusta el ancho de la línea */
+    margin: 0 auto; /* Centra la línea horizontal */
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+.gallery {
+    padding: 2rem 0;
+    background-color: #535353;
+}
+
+
+.gallery-container {
+  white-space: nowrap; /* Evita que los elementos se envuelvan a la siguiente línea */
+  overflow-x: auto; /* Añade barra de desplazamiento horizontal si es necesario */
+  padding: 1rem; /* Elimina el padding para evitar espacios adicionales */
+}
+
+.gallery-item {
+    transition: transform 0.3s ease;
+     display: inline-block; /* Asegura que los elementos estén en una fila */
+}
+
+.gallery-item:hover {
+    transform: scale(1.1);
+}
+
+.gallery h2{
+    font-family: 'Guffie';
+    font-size: 5rem;
+}
+
+.gallery img {
+    padding: 5px;
+    max-width: auto;
+    height: 230px;
+    border-radius: 20px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  
+  @media (max-width: 768px) {
+    .gallery-container {
+      display: none; /* Oculta la galería en pantallas pequeñas */
+    }
+  }
+
+  .article {
+    background-color: #000;
+    color: white;
+}
+
+.article img {
+    padding-bottom: 10px;
+    width: 100%;
+    height: auto;
+}
+
+.article h2{
+    font-family: 'Guffie';
+    font-size: 5rem;
+}
+
+.article h3 {
+    font-family: 'Meorgine';
+    font-size: 3rem;
+    margin-top: 10px;
+}
+
+.article h5 {
+    
+    font-family: 'Boowie';
+    margin-top: 5px;
+    color: #ccc;
+}
+
+.article p{
+   font-family: 'Creato'; 
+}
+
+.article li{
+    font-family: 'Creato'; 
+}
+
+.article .line-div {
+    border-top: 2px solid #fff; /* Ajusta el grosor y color según tu gusto */
+    width: 100%; /* Ajusta el ancho de la línea */
+    margin: 0 auto; /* Centra la línea horizontal */
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+.reduced-space {
+    margin: 10px 0; /* Menos espacio entre párrafos */ 
+}
+
+.article .container{
+    padding-bottom: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.article .btn {
+    font-family: 'Guffie';
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+.article .miniImagen {
+    height: 150px;
+    width: auto;
+}
+
+.article .d-flex img {
+    max-width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.article .d-flex div {
+    display: flex;
+    align-items: center;
+}
+
+.number-circle {
+    font-family: 'Guffie';
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.number-circle span {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #fff; /* Solo el borde */
+    color: #fff;
+    line-height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.separator-animated {
+    height: 4px;
+    margin: 20px 0;
+    background: linear-gradient(90deg, #ffffff, #eeb3e6);
+    background-size: 200% 100%;
+    animation: gradient-animation 2s infinite;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 100% 0%;
+    }
+  }
+
+@media (max-width: 768px) {
+    .article .miniImagen {
+        height: 100px;
+        width: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .article p {
+        margin: 15px 0; /* Ajusta el margen superior e inferior */
+        padding: 0 10px; /* Opcional: agrega relleno horizontal */
+    }
+
+    .article img {
+        margin-bottom: 15px; /* Ajusta el margen inferior para separar de los párrafos */
+    }
+}
+
+.separator-gradient {
+    height: 2px;
+    background: linear-gradient(to right, #ffffff, #47655e); /* Ajusta los colores del gradiente */
+    margin: 20px 0;
+  }
+
+.photo-album {
+    text-align: center;
+    color: #000;
+  }
+  
+  .photo-album h2 {
+    color: white;
+    font-family: 'Guffie';
+    font-size: 5rem;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+  }
+  
+  .photo-container {
+    background-color: #000;
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  .photo-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 1px solid #fff;
+  }
+  
+  .photo-container p {
+    color: #fff;
+    margin-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+  }
+  
+
+  .tabs-section {
+    background-color: #47655e;
+    padding: 20px 0; /* Añade un poco de espacio alrededor */
+}
+
+.tabs-section .container {
+    margin: 0 auto; /* Alinea el contenedor al centro */
+    max-width: 1200px; /* Controla el ancho máximo del contenedor */
+}
+
+.tabs-section h2 {
+    font-family: 'Guffie';
+    font-size: 5rem;
+    color: white;
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan si no caben en una fila */
+    justify-content: center; /* Alinea los elementos al centro */
+}
+
+.col-md-3 {
+    flex: 1 0 21%; /* Cada botón ocupará aproximadamente el 21% del ancho del contenedor */
+    max-width: 21%; /* Evita que los botones se extiendan más allá de este ancho */
+    margin: 10px; /* Espacio alrededor de cada botón */
+}
+
+.tab-button {
+    font-family: 'Boowie';
+    font-size: 1rem;
+    color: white;
+    background: transparent;
+    border: 2px solid white;
+    padding: 10px 20px;
+    text-align: center; /* Alinea el texto al centro */
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+    display: block; /* Asegura que el botón ocupe el ancho completo de su contenedor */
+}
+
+.tab-button:hover {
+    background: white;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .tab-button {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+    }
+
+    .col-md-3 {
+        flex: 1 0 46%; /* En pantallas más pequeñas, cada botón ocupará aproximadamente el 46% del ancho del contenedor */
+        max-width: 46%;
+    }
+}
+
+@media (max-width: 992px) {
+    .tabs-section {
+        font-size: 0.9rem; /* Disminuir ligeramente el tamaño de la fuente */
+    }
+
+    .tabs-section h2 {
+        font-size: 2.5rem; /* Ajustar el tamaño del título en tablets */
+    }
+
+    .tabs-section p {
+        font-size: 0.9rem; /* Reducir el tamaño del texto */
+    }
+}
+
+/* Estilos para celulares (ancho máximo de 768px) */
+@media (max-width: 768px) {
+    .tabs-section {
+        font-size: 0.8rem; /* Disminuir más el tamaño de la fuente */
+    }
+
+    .tabs-section h2 {
+        font-size: 2rem; /* Ajustar el tamaño del título en celulares */
+    }
+
+    .tabs-section p {
+        font-size: 0.8rem; /* Reducir el tamaño del texto */
+    }
+}
+
+
+.tour-section {
+    background-image: url(images/fondoPrst.png);
+    width: 100%;
+    background-size: auto;
+    padding: 100px 0;
+    min-height: 100vh; /* Asegura que cubra toda la altura de la ventana */
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: 2rem 0;
+}
+
+.tour-section .imgmkp{
+    height: auto;
+    width: 700px;
+}
+
+.tour-title {
+    font-family: 'Guffie';
+    font-size: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: #eea0dd;
+}
+
+.tour-text {
+    font-family: 'Creato';
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-align: left;
+    margin-top: 20px;
+}
+
+
+.tour-img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .tour-title {
+        font-size: 2.5rem;
+    }
+
+    .tour-text {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px){
+    .model-margin{
+        padding-top: 1rem;
+    }
+}
+.lower-section {
+    padding: 0 4rem; /* Agrega padding a los lados izquierdo y derecho */
+    background-color: #8b8a8a; /* Color de fondo opcional */
+}
+
+.lower-section .container {
+    max-width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+    padding: 0; /* Elimina padding en el contenedor */
+}
+
+.lower-section .row {
+    align-items: stretch; /* Asegura que las columnas tengan la misma altura */
+}
+
+.lower-section .col-md-4 {
+    padding: 0; /* Elimina padding en la columna de la imagen */
+}
+
+.lower-section img {
+    width: auto;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra todo el espacio disponible */
+}
+.lower-section h1{
+    font-family: 'Guffie';
+    font-size: 5rem;
+}
+.lower-title {
+    font-family: 'Meorgine';
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.lower-subtitle {
+    font-family: 'Boowie';
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+.lower-text {
+    font-family: 'Creato';
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .lower-section {
+        padding: 0 1rem; /* Reduce padding en dispositivos móviles */
+    }
+
+    .lower-title {
+        font-size: 2rem;
+    }
+
+    .lower-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .lower-text {
+        font-size: 0.9rem;
+    }
+}
+
+
+.footer-section {
+    margin: 0; /* Elimina el margen externo */
+    padding: 10px 0; /* Ajusta el padding según sea necesario */
+    width: 100%; /* Asegura que el footer ocupe todo el ancho disponible */
+    height: 200px;
+    background-color: black;
+    color: #fff; /* Texto en blanco para contrastar con el fondo */
+    text-align: center; /* Centrado del texto */
+    padding: 10px 0; /* Añade algo de padding vertical */
+}
+  
+  .footer-section .social-icons i {
+    font-size: 1.5em;
+    margin: 0 10px;
+  }
+
+  @media (max-width: 768px) {
+  .footer-section .social-icons i {
+    font-size: 1.5em;
+    margin: 0 10px;
+  }
+}
+
+
+  
+
+
+
