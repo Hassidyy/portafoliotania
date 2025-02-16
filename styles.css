@@ -414,6 +414,8 @@ footer p {
     }
 }
 
+
+
 /* Blog imagen */
 .content {
     display: flex;
@@ -443,108 +445,6 @@ p{
 .image-box img {
     max-width: 100%;
     border-radius: 10px;
-}
-
-
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: url('images/mafapobck.JPG') no-repeat center center/cover;
-}
-.gallery-container {
-    position: relative;
-    width: 90%;
-    max-width: 1000px;
-    text-align: center;
-    padding: 10px;
-}
-.image-frame {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    background: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.image-box {
-    width: 200px;
-    height: 200px;
-    background: transparent;
-    border: 2px solid white;
-    position: absolute;
-}
-.description {
-    color: white;
-    margin-top: 20px;
-}
-.carousel-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    position: relative;
-}
-.carousel-images {
-    display: flex;
-    overflow: hidden;
-    width: 300px;
-    height: 200px;
-    position: relative;
-}
-.carousel-images img {
-    width: 100%;
-    display: none;
-    position: absolute;
-}
-.carousel-images img.active {
-    display: block;
-}
-button {
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 18px;
-}
-@media (max-width: 768px) {
-    .image-frame {
-        height: 200px;
-    }
-    .image-box {
-        width: 150px;
-        height: 150px;
-    }
-    .carousel-images {
-        width: 250px;
-        height: 150px;
-    }
-    button {
-        font-size: 16px;
-        padding: 8px;
-    }
-}
-@media (max-width: 480px) {
-    .image-frame {
-        height: 150px;
-    }
-    .image-box {
-        width: 120px;
-        height: 120px;
-    }
-    .carousel-images {
-        width: 200px;
-        height: 120px;
-    }
-    button {
-        font-size: 14px;
-        padding: 6px;
-    }
 }
 
 
