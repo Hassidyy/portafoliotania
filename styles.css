@@ -415,7 +415,87 @@ footer p {
 }
 
 
+/* Blog video */
+.video-box video {
+    max-width: 100%;
+    border-radius: 10px;
+}
+/* Estilos responsivos para imagen y video */
+        .image-box, .video-box {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-box img, 
+        .video-box video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+  
 
+        /* Sección de comentarios */
+        .comments-section {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 10px;
+        }
+        .comments-section h3 {
+            font-family: 'Boowie';
+            color: #fff;
+            font-size: 24px;
+        }
+        .comment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .comment-form input, 
+        .comment-form textarea {
+            font-family: 'Creato';
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+        }
+        .comment-form button {
+            background-color: #384d31;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Boowie';
+        }
+        .comment-form button:hover {
+            background-color: #10350fa2;
+        }
+        .comments-list {
+            font-family: 'Creato';
+            margin-top: 20px;
+            list-style: none;
+            padding: 0;
+        }
+        .comment-item {
+            background: #333;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .comment-item strong {
+            color: #ff5c8a;
+        }
+
+        .btn-outline-light{
+            font-family: 'Boowie';
+        }
 
 
 
